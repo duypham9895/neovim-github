@@ -6,9 +6,9 @@ end
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
--- local diagnostics = null_ls.builtins.diagnostics
+local diagnostics = null_ls.builtins.diagnostics
 
-local prettierd = null_ls.builtins.formatting.prettierd
+local prettierd = formatting.prettierd
 
 null_ls.setup({
   debug = false,
@@ -17,11 +17,11 @@ null_ls.setup({
       filetypes = { "lua", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less",
         "html", "json", "jsonc", "yaml", "markdown", "markdown.mdx", "graphql", "handlebars" },
     }),
-    -- diagnostics.eslint_d.with({ diagnostics_format = '[eslint] #{m}\n(#{c})' }),
+    diagnostics.eslint_d,
     -- diagnostics.fish,
     -- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.stylua,
-    -- diagnostics.flake8
+    null_ls.builtins.completion.spell,
   },
 })
