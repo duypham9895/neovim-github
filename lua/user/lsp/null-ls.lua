@@ -17,7 +17,9 @@ null_ls.setup({
       filetypes = { "lua", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less",
         "html", "json", "jsonc", "yaml", "markdown", "markdown.mdx", "graphql", "handlebars" },
     }),
-    diagnostics.eslint_d,
+    diagnostics.eslint_d.with({
+      diagnostics_format = "[eslint] #{m}\n(#{c})"
+    }),
     -- diagnostics.fish,
     -- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
     formatting.black.with({ extra_args = { "--fast" } }),
