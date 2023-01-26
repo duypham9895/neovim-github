@@ -61,6 +61,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
+  use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
   use {
     "svrana/neosolarized.nvim",
     requires = { "tjdevries/colorbuddy.nvim" }
@@ -103,6 +104,7 @@ return packer.startup(function(use)
 
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
+  use "tpope/vim-fugitive"
 
   -- Switch panes between NeoVim and Tmux
   use "christoomey/vim-tmux-navigator"

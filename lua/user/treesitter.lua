@@ -10,7 +10,7 @@ configs.setup({
   ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
   highlight = {
     enable = true, -- false will disable the whole extension
-    additional_vim_regex_highlighting = false,
+    additional_vim_regex_highlighting = true,
     -- disable = { "css" }, -- list of language that will be disabled
   },
   autopairs = {
