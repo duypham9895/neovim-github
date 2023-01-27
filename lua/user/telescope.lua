@@ -85,6 +85,16 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+    -- find_files = {
+    --   find_command = {
+    --     "fd",
+    --     ".",
+    --     "--type",
+    --     "file",
+    --     "--hidden",
+    --     "--strip-cwd-prefix"
+    --   }
+    -- }
   },
   extensions = {
     -- Your extension configuration goes here:
