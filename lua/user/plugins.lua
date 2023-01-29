@@ -108,7 +108,7 @@ return packer.startup(function(use)
   use "tpope/vim-fugitive"
 
   -- Switch panes between NeoVim and Tmux
-  use "christoomey/vim-tmux-navigator"
+  -- use "christoomey/vim-tmux-navigator"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

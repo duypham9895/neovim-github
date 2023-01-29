@@ -7,10 +7,20 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--ignore-file=" .. vim.fn.expand("$HOME") .. "/.fdignore"
+    },
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
+    set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
 
     mappings = {
       i = {
@@ -85,16 +95,14 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
-    -- find_files = {
-    --   find_command = {
-    --     "fd",
-    --     ".",
-    --     "--type",
-    --     "file",
-    --     "--hidden",
-    --     "--strip-cwd-prefix"
-    --   }
-    -- }
+    find_files = {
+      hidden = true
+    },
+    live_grep = {
+      hidden = true,
+      only_sort_text = true
+    }
+
   },
   extensions = {
     -- Your extension configuration goes here:
@@ -102,5 +110,12 @@ telescope.setup {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case" -- or "ignore_case" or "respect_case"
+      -- case_mode = "ignore_case" -- or "ignore_case" or "respect_case"
+    }
   },
 }
